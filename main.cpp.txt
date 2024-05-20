@@ -5,7 +5,6 @@ using namespace std;
 
 int main() {
     char playAgain;
-
     do {
         Dice player;
 
@@ -25,9 +24,7 @@ int main() {
         cout << "Dice 1: " << player.getFaceValue1() << endl;
         cout << "Dice 2: " << player.getFaceValue2() << endl;
         cout << "Dice 3: " << player.getFaceValue3() << endl;
-
         cout << "總和: " << total << endl;
-        
         
 
         Dice::setMoney(Dice::getMoney() - bet);
@@ -37,7 +34,6 @@ int main() {
         if (Dice::getMoney()==0) {
             break;
         }
-
         cout << "要再來一把嗎? (Y/N): ";
         cin >> playAgain;
         cout << "-----------------" << endl;
