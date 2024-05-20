@@ -11,9 +11,9 @@ Dice::Dice() {
 }
 
 void Dice::roll() {
-    faceValue1 = rand() % 6 + 1; // 第一顆骰子面值在1到6之間
-    faceValue2 = rand() % 6 + 1; // 第二顆骰子面值在1到6之間
-    faceValue3 = rand() % 6 + 1; // 第三顆骰子面值在1到6之間
+    faceValue1 = rand() % 6 + 1; 
+    faceValue2 = rand() % 6 + 1; 
+    faceValue3 = rand() % 6 + 1; 
 }
 
 int Dice::getFaceValue1() const {
