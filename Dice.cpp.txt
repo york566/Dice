@@ -1,0 +1,55 @@
+#include <iostream>
+#include "Dice.h"
+
+using namespace std;
+
+int Dice::money = 2000;
+
+Dice::Dice() {
+    srand(time(0));
+    roll();
+}
+
+void Dice::roll() {
+    faceValue1 = rand() % 6 + 1; // 第一顆骰子面值在1到6之間
+    faceValue2 = rand() % 6 + 1; // 第二顆骰子面值在1到6之間
+    faceValue3 = rand() % 6 + 1; // 第三顆骰子面值在1到6之間
+}
+
+int Dice::getFaceValue1() const {
+    return faceValue1;
+}
+
+int Dice::getFaceValue2() const {
+    return faceValue2;
+}
+
+int Dice::getFaceValue3() const {
+    return faceValue3;
+}
+
+int Dice::getTotal() const {
+    return faceValue1 + faceValue2 + faceValue3;
+}
+
+int Dice::getMoney() {
+    return money;
+}
+
+void Dice::setMoney(int amount) {
+    money = amount;
+}
+
+void Dice::checkGuess(const string& guess, int bet, int total) {
+    if ((total >= 10 && guess == "big") || (total <= 9 && guess == "small")) {
+        cout << "你贏了" << endl;
+        money += bet * 2;
+    }
+
+    else {
+        cout << "你輸了" << endl;
+    }
+
+    cout << "你還有: $" << money << endl;
+
+}

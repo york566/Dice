@@ -1,0 +1,50 @@
+#include <iostream>
+#include "Dice.h"
+
+using namespace std;
+
+int main() {
+    char playAgain;
+
+    do {
+        Dice player;
+
+        cout << "你有 $" << Dice::getMoney() << endl;
+
+        player.roll();
+        int total = player.getTotal();
+   
+        string guess;
+        cout << "猜大小: (big/small):";
+        cin >> guess;
+   
+        int bet;
+        cout << "下注: ";
+        cin >> bet;
+
+        cout << "Dice 1: " << player.getFaceValue1() << endl;
+        cout << "Dice 2: " << player.getFaceValue2() << endl;
+        cout << "Dice 3: " << player.getFaceValue3() << endl;
+
+        cout << "總和: " << total << endl;
+        
+        
+
+        Dice::setMoney(Dice::getMoney() - bet);
+
+        player.checkGuess(guess, bet, total);
+
+        if (Dice::getMoney()==0) {
+            break;
+        }
+
+        cout << "要再來一把嗎? (Y/N): ";
+        cin >> playAgain;
+        cout << "-----------------" << endl;
+
+    } while (playAgain == 'Y' || playAgain == 'y');
+
+    cout << "遊戲結束" << endl;
+
+    return 0;
+}

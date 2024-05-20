@@ -1,0 +1,25 @@
+#ifndef DICE_H
+#define DICE_H
+
+#include <string> 
+using namespace std;
+
+class Dice {
+private:
+    static int money; // 金錢變數
+    int faceValue1;
+    int faceValue2;
+    int faceValue3;
+public:
+    Dice();
+    void roll();
+    int getFaceValue1() const;
+    int getFaceValue2() const;
+    int getFaceValue3() const;
+    int getTotal() const;
+    static int getMoney(); // 靜態成員函數來取得金錢
+    static void setMoney(int amount); // 靜態成員函數來設定金錢
+    void checkGuess(const string& guess, int bet, int total); // 檢查猜測結果的函數聲明
+};
+
+#endif // DICE_H
