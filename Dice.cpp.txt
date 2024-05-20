@@ -7,7 +7,7 @@ int Dice::money = 2000;
 
 Dice::Dice() {
     srand(time(0));
-    roll();
+    
 }
 
 void Dice::roll() {
