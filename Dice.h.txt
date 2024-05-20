@@ -6,7 +6,7 @@ using namespace std;
 
 class Dice {
 private:
-    static int money; // 金錢變數
+    static int money; 
     int faceValue1;
     int faceValue2;
     int faceValue3;
@@ -17,9 +17,9 @@ public:
     int getFaceValue2() const;
     int getFaceValue3() const;
     int getTotal() const;
-    static int getMoney(); // 靜態成員函數來取得金錢
-    static void setMoney(int amount); // 靜態成員函數來設定金錢
-    void checkGuess(const string& guess, int bet, int total); // 檢查猜測結果的函數聲明
+    static int getMoney(); 
+    static void setMoney(int amount); 
+    void checkGuess(const string& guess, int bet, int total); 
 };
 
 #endif // DICE_H
