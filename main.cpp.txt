@@ -8,15 +8,15 @@ int main() {
     do {
         Dice player;
 
-        cout << "你有 $" << Dice::getMoney() << endl;
+        cout << "你有 $" << player.getMoney() << endl;
 
         player.roll();
         int total = player.getTotal();
-   
+
         string guess;
         cout << "猜大小: (big/small):";
         cin >> guess;
-   
+
         int bet;
         cout << "下注: ";
         cin >> bet;
@@ -25,13 +25,13 @@ int main() {
         cout << "Dice 2: " << player.getFaceValue2() << endl;
         cout << "Dice 3: " << player.getFaceValue3() << endl;
         cout << "總和: " << total << endl;
-        
 
-        Dice::setMoney(Dice::getMoney() - bet);
+
+        player.setMoney(player.getMoney() - bet);
 
         player.checkGuess(guess, bet, total);
 
-        if (Dice::getMoney()==0) {
+        if (player.getMoney() == 0) {
             break;
         }
         cout << "要再來一把嗎? (Y/N): ";
